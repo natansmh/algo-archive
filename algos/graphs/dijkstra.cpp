@@ -45,11 +45,13 @@ void dijkstra(const vector<vector<Edge>>& adjList, int V, int src)
         if(curr.distance > dist[u])
             continue;
 
-        for (const Edge& edge : adjList[u]) {
+        for (const Edge& edge : adjList[u])
+        {
             int v = edge.dest;
             int wt = edge.weight;
 
-            if (dist[v] > dist[u] + wt) {
+            if (dist[v] > dist[u] + wt)
+            {
                 dist[v] = dist[u] + wt;
                 pq.push( {v,dist[v]} );
             }
