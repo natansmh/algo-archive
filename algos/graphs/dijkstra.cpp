@@ -5,6 +5,8 @@
 
 using namespace std;
 
+const int INF = INT_MAX;
+
 struct Edge {
     int dest;
     int weight;
@@ -28,7 +30,7 @@ void addEdge(vector<vector<Edge>>& adjList, int u, int v, int weight)
 void dijkstra(const vector<vector<Edge>>& adjList, int V, int src)
 {
     priority_queue<State, vector<State>> pq;
-    vector<int> dist(V, INT_MAX);
+    vector<int> dist(V, INF);
 
     pq.push( {src, 0} );
     dist[src] = 0;
