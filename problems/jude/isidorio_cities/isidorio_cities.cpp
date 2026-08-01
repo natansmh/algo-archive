@@ -19,10 +19,8 @@ struct Train {
 
 struct State {
     int vertex;
-    int distance;
-};
+    ll distance;
 
-struct CompareState {
     bool operator()(const State& a, const State& b) const {
         return a.distance > b.distance;
     }
@@ -36,7 +34,7 @@ void addEdge(vector<vector<Edge>>& adjList, int u, int v, ll weight, bool train)
 
 int dijkstra(const vector<vector<Edge>>& adjList, const vector<Train>& trains, int V, int src)
 {
-    priority_queue<State, vector<State>, CompareState> pq;
+    priority_queue<State, vector<State>> pq;
     vector<int> dist(V, INT_MAX);
     vector<bool> usedTrain(V, false);
 
